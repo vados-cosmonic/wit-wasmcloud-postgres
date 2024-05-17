@@ -1,0 +1,16 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  wit-deps-check:
+    name: Check that wit-deps installs properly
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: cargo install wit-deps-cli
+    - run: wit-deps lock --check
