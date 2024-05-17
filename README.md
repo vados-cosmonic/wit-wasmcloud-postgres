@@ -51,8 +51,7 @@ This will populate a `wit/deps` folder and create `wit/deps.lock`.
 
 ### 🚀 Using the WIT interfaces
 
-> ![NOTE]
-> If you're in the rust ecosystem, using the [`wasi-ext-wasmcloud-postgres`][wasi-ext-wasmcloud-postgres] crate is highly recommended -- it contains many helper methods that make writing code using this interface much easier.
+Using the WIT interfaces from your language of choice depends primarily on your language, toolchain, and the WebAssembly runtime you're using -- here are some examples for reference.
 
 #### Guest: Rust
 
