@@ -7,10 +7,22 @@ on:
     branches: [main]
 
 jobs:
+  # Ensure `wit-deps` runs properly with a given version with a given version
   wit-deps-check:
-    name: Check that wit-deps installs properly
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          - github.com/vados-cosmonic/wit-wasmcloud-postgres
+        tag:
+          - main
     steps:
     - uses: actions/checkout@v2
-    - run: cargo install wit-deps-cli
-    - run: wit-deps lock --check
+    - uses: taiki-e/cache-cargo-install-action@v2
+      with:
+        tool: wit-deps-cli
+    - name: Create deps.toml file
+      shell: bash
+      run: |
+        echo 'postgres = "https://${{ matrix.repo }}/archive/${{ matrix.tag }}.tar.gz"' > wit/deps.toml;
+    - run: wit-deps
