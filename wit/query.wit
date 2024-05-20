@@ -17,7 +17,7 @@ interface query {
 
   /// Query a Postgres database given a connection token (which can represent a connection *or* session)
   ///
-  /// Queries *must* be parametrized, with named arguments in the form of `$<integer>`, for example:
+  /// Queries *must* be parameterized, with named arguments in the form of `$<integer>`, for example:
   ///
   /// ```
   /// SELECT email,username FROM users WHERE uuid=$1;
@@ -39,7 +39,7 @@ interface managed-query {
   /// Query a Postgres database without a connection token, leaving connection/session management
   /// to the callee/implementer of this interface
   ///
-  /// Queries *must* be parametrized, with named arguments in the form of `$<integer>`, for example:
+  /// Queries *must* be parameterized, with named arguments in the form of `$<integer>`, for example:
   ///
   /// ```
   /// SELECT email,username FROM users WHERE uuid=$1;
@@ -81,7 +81,7 @@ interface prepared {
   /// Prepare a statement, given a connection token (which can represent a connection *or* session),
   /// to a Postgres database.
   ///
-  /// Queries *must* be parametrized, with named arguments in the form of `$<integer>`, for example:
+  /// Queries *must* be parameterized, with named arguments in the form of `$<integer>`, for example:
   ///
   /// ```
   /// SELECT email,username FROM users WHERE uuid=$1;
