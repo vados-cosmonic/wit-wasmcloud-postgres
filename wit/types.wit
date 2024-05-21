@@ -72,9 +72,6 @@ interface types {
   /// Arbitrary precision numeric type
   type numeric = string;
 
-  type mac-address-eui-48 = tuple<u8, u8, u8, u8, u8, u8>;
-  type mac-address-eui-64 = tuple<u8, u8, u8, u8, u8, u8, u8, u8>;
-
   /// Chosen weight of a Lexeme
   enum lexeme-weight {
     A,
@@ -137,6 +134,14 @@ interface types {
   record timestamp-tz {
     timestamp: timestamp,
     offset: offset,
+  }
+
+  record mac-address-eui-48 {
+   bytes: tuple<u8, u8, u8, u8, u8, u8>,
+  }
+
+  record mac-address-eui-64 {
+    bytes: tuple<u8, u8, u8, u8, u8, u8, u8, u8>,
   }
 
   /// Postgres data values, usable as parameters or via queries
