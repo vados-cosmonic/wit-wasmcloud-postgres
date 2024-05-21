@@ -136,11 +136,11 @@ interface types {
     offset: offset,
   }
 
-  record mac-address-eui-48 {
+  record mac-address-eui48 {
    bytes: tuple<u8, u8, u8, u8, u8, u8>,
   }
 
-  record mac-address-eui-64 {
+  record mac-address-eui64 {
     bytes: tuple<u8, u8, u8, u8, u8, u8, u8, u8>,
   }
 
@@ -207,11 +207,11 @@ interface types {
     inet(string),
     inet-array(list<string>),
 
-    macaddr(mac-address-eui-48), // EUI-48
-    macaddr-array(list<mac-address-eui-48>), // EUI-48
+    macaddr(mac-address-eui48), // EUI-48
+    macaddr-array(list<mac-address-eui48>), // EUI-48
 
-    macaddr8(mac-address-eui-64), // EUI-64 (deprecated)
-    macaddr8-array(list<mac-address-eui-64>), // EUI-64 (deprecated)
+    macaddr8(mac-address-eui64), // EUI-64 (deprecated)
+    macaddr8-array(list<mac-address-eui64>), // EUI-64 (deprecated)
 
     // Geo
     box(tuple<lower-left-point, upper-right-point>),
