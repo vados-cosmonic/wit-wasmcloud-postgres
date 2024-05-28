@@ -4,7 +4,7 @@ package wasmcloud:postgres@0.1.0-draft;
 interface types {
 
   /// Errors that occur when creating a connection
-  variant create-connection-error { 
+  variant create-connection-error {
     /// Invalid connection options
     invalid-connection-options(string),
     /// Failed to connect to the database
@@ -151,6 +151,8 @@ interface types {
   ///
   /// NOTE: all numeric values are little-endian unless otherwise specified
   variant pg-value {
+    null,
+
     // Numeric
     big-int(s64), int8(s64),
     int8-array(list<s64>),
